@@ -169,6 +169,11 @@
 #endif
 #endif
 
+#ifdef HW_RVL
+#define LJ_TARGET_WII 1
+#define LJ_TARGET_CONSOLE	1
+#endif
+
 /* -- Arch-specific settings ---------------------------------------------- */
 
 /* Set target architecture properties. */
@@ -313,7 +318,7 @@
 #define LJ_TARGET_MASKROT	1
 #define LJ_TARGET_UNIFYROT	1	/* Want only IR_BROL. */
 
-#if LJ_TARGET_CONSOLE
+#if LJ_TARGET_XBOX360
 #define LJ_ARCH_PPC32ON64	1
 #define LJ_ARCH_NOFFI		1
 #elif LJ_ARCH_BITS == 64
