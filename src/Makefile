@@ -87,7 +87,7 @@ BUILDMODE= static
 ##############################################################################
 # Enable/disable these features as needed, but make sure you force a full
 # recompile with "make clean", followed by "make".
-XCFLAGS= -DLUAJIT_SECURITY_PRNG=0
+XCFLAGS= -DLUAJIT_ENABLE_JIT=1 -DLUAJIT_SECURITY_PRNG=0 -DLUAJIT_SECURITY_MCODE=0
 #
 # Permanently disable the FFI extension to reduce the size of the LuaJIT
 # executable. But please consider that the FFI library is compiled-in,
@@ -102,7 +102,7 @@ XCFLAGS= -DLUAJIT_SECURITY_PRNG=0
 #XCFLAGS+= -DLUAJIT_ENABLE_LUA52COMPAT
 #
 # Disable the JIT compiler, i.e. turn LuaJIT into a pure interpreter.
-XCFLAGS+= -DLUAJIT_DISABLE_JIT
+#XCFLAGS+= -DLUAJIT_DISABLE_JIT
 #
 # Some architectures (e.g. PPC) can use either single-number (1) or
 # dual-number (2) mode. Uncomment one of these lines to override the
