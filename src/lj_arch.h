@@ -169,6 +169,11 @@
 #endif
 #endif
 
+#ifdef HW_DOL
+#define LJ_TARGET_GCN 1
+#define LJ_TARGET_CONSOLE	1
+#endif
+
 #ifdef HW_RVL
 #define LJ_TARGET_WII 1
 #define LJ_TARGET_CONSOLE	1

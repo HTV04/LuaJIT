@@ -14,9 +14,14 @@ fi
 
 if [ "$1" == "cube" ]
 then
-  echo "GameCube not supported yet."
+  echo "Building LuaJIT for GameCube..."
 
-  exit 1
+  make HOST_CC="gcc -m32" \
+    CROSS="$DEVKITPPC/bin/powerpc-eabi-" \
+    TARGET_CFLAGS="-DGEKKO -mogc -mcpu=750 -meabi -mhard-float -g -O2 -Wall " \
+    TARGET_SYS=GameCube
+
+  echo "LuaJIT for GameCube built."
 else
   echo "Building LuaJIT for Wii..."
 

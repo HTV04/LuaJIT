@@ -15,7 +15,7 @@ fi
 
 if [ "$1" == cube ]
 then
-  platform=cube
+  platform=gamecube
 
   echo "Installing LuaJIT for GameCube..."
 else
@@ -39,7 +39,7 @@ cp src/libluajit.a "$2$DEVKITPRO/portlibs/$platform/lib/libluajit.a"
 
 echo "Copied libluajit.a to $2$DEVKITPRO/portlibs/$platform/lib"
 
-if [ $platform == cube ]
+if [ $platform == gamecube ]
 then
   echo "LuaJIT for GameCube installed."
 else
