@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # LuaJIT install script for devkitPPC
 # By HTV04
@@ -6,25 +6,25 @@
 # $1: Platform (optional)
 # $2: Destination directory (optional)
 
-if [ -z "$DEVKITPRO" ]
+# Set platform
+if [ "$1" == "gamecube" ]
 then
-    echo "Please set DEVKITPRO in your environment. export DEVKITPRO=<path to>devkitPro"
+  source /opt/devkitpro/cubevars.sh
 
-    exit 1
-fi
-
-if [ "$1" == cube ]
-then
-  platform=gamecube
+  platform="gamecube"
 
   echo "Installing LuaJIT for GameCube..."
 else
-  platform=wii
+  source /opt/devkitpro/wiivars.sh
+
+  platform="wii"
 
   echo "Installing LuaJIT for Wii..."
 fi
 
-mkdir -p "$1$DEVKITPRO/portlibs/$platform/include"
+# Create directories if they don't exist
+mkdir -p "$2$DEVKITPRO/portlibs/$platform/include"
+mkdir -p "$2$DEVKITPRO/portlibs/$platform/lib"
 
 # Install header files
 for header in lauxlib.h lua.h lua.hpp luaconf.h luajit.h lualib.h

@@ -71,10 +71,10 @@ CCWARN= -Wall
 # as dynamic mode.
 #
 # Mixed mode creates a static + dynamic library and a statically linked luajit.
-#BUILDMODE= mixed
+BUILDMODE= mixed
 #
 # Static mode creates a static library and a statically linked luajit.
-BUILDMODE= static
+#BUILDMODE= static
 #
 # Dynamic mode creates a dynamic library and a dynamically linked luajit.
 # Note: this executable will only run when the library is installed!
@@ -87,7 +87,7 @@ BUILDMODE= static
 ##############################################################################
 # Enable/disable these features as needed, but make sure you force a full
 # recompile with "make clean", followed by "make".
-XCFLAGS= -DLUAJIT_ENABLE_JIT=1 -DLUAJIT_SECURITY_PRNG=0 -DLUAJIT_SECURITY_MCODE=0
+XCFLAGS=
 #
 # Permanently disable the FFI extension to reduce the size of the LuaJIT
 # executable. But please consider that the FFI library is compiled-in,
@@ -107,7 +107,7 @@ XCFLAGS= -DLUAJIT_ENABLE_JIT=1 -DLUAJIT_SECURITY_PRNG=0 -DLUAJIT_SECURITY_MCODE=
 # Some architectures (e.g. PPC) can use either single-number (1) or
 # dual-number (2) mode. Uncomment one of these lines to override the
 # default mode. Please see LJ_ARCH_NUMMODE in lj_arch.h for details.
-XCFLAGS+= -DLUAJIT_NUMMODE=1
+#XCFLAGS+= -DLUAJIT_NUMMODE=1
 #XCFLAGS+= -DLUAJIT_NUMMODE=2
 #
 # Disable LJ_GC64 mode for x64.
@@ -128,7 +128,7 @@ XCFLAGS+= -DLUAJIT_NUMMODE=1
 # realloc usually doesn't return addresses in the right address range.
 # OTOH this option is mandatory for Valgrind's memcheck tool on x64 and
 # the only way to get useful results from it for all other architectures.
-XCFLAGS+= -DLUAJIT_USE_SYSMALLOC
+#XCFLAGS+= -DLUAJIT_USE_SYSMALLOC
 #
 # This define is required to run LuaJIT under Valgrind. The Valgrind
 # header files must be installed. You should enable debug information, too.

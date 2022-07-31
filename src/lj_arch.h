@@ -162,6 +162,16 @@
 #define LJ_TARGET_GC64		1
 #endif
 
+#ifdef HW_DOL
+#define LJ_TARGET_GAMECUBE_OGC 1
+#define LJ_TARGET_CONSOLE	1
+#endif
+
+#ifdef HW_RVL
+#define LJ_TARGET_WII_OGC 1
+#define LJ_TARGET_CONSOLE	1
+#endif
+
 #ifdef __NX__
 #define LJ_TARGET_NX		1
 #define LJ_TARGET_CONSOLE	1
@@ -174,16 +184,6 @@
 #if LUAJIT_TARGET == LUAJIT_ARCH_X64
 #define LJ_TARGET_GC64		1
 #endif
-#endif
-
-#ifdef HW_DOL
-#define LJ_TARGET_GCN 1
-#define LJ_TARGET_CONSOLE	1
-#endif
-
-#ifdef HW_RVL
-#define LJ_TARGET_WII 1
-#define LJ_TARGET_CONSOLE	1
 #endif
 
 /* -- Arch-specific settings ---------------------------------------------- */

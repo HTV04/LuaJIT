@@ -3,8 +3,13 @@ README for LuaJIT for devkitPPC 2.1.0-beta3
 
 LuaJIT is a Just-In-Time (JIT) compiler for the Lua programming language.
 
-This repo contains some patches that enable LuaJIT to build on devkitPPC-supported platforms, which are currently the Wii and GameCube.
-Huge thanks to thenumbernine for his Wii LuaJIT compile script: https://github.com/thenumbernine/wii-luajit/blob/master/luajit.make.wii.sh
+This repo contains some patches that enable LuaJIT to build on devkitPPC-supported platforms (currently only the Wii and GameCube).
+
+Thanks to:
+* thenumbernine for his Wii LuaJIT build script: https://github.com/thenumbernine/wii-luajit/blob/master/luajit.make.wii.sh
+* p-sam for his LuaJIT build script: https://github.com/retronx-team/love-nx/blob/develop/build.sh
+
+These scripts were used as references for the devkitPPC build script.
 
 LuaJIT Project Homepage: https://luajit.org/
 
